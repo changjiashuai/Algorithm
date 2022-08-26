@@ -75,7 +75,7 @@ fun minWindow2(s: String, t: String): String {
 
     val windowContents = mutableMapOf<Char, Int>()
 
-    // r move ++
+    //find all target substring right move ++
     while (r < s.length) {
         val c = s[r]
         val count = windowContents.getOrDefault(c, 0)
@@ -86,7 +86,7 @@ fun minWindow2(s: String, t: String): String {
             currentCount++
         }
 
-        //start match substring
+        //match target substring start left move
         while (l <= r && currentCount == targetCount) {
             val c = s[l]
 
@@ -105,5 +105,5 @@ fun minWindow2(s: String, t: String): String {
         r++
     }
 
-    return if (windowLength == -1) "" else s.substring(l-1, r)
+    return if (windowLength == -1) "" else s.substring(l - 1, r)
 }
