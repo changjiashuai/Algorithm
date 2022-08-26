@@ -11,5 +11,6 @@ fun firstFactorial(num: Int): Long {
 }
 
 fun main() {
+    "".reversed()
     println("total=${firstFactorial(18)}")
 }
