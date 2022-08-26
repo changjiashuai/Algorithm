@@ -21,7 +21,7 @@ fun minWindow(s: String, t: String): String {
                 count++
             }
             //???
-//            tMap[c] = tMap[c]!! - 1
+            tMap[c] = tMap[c]!! - 1
             println("tMap[$c] = ${tMap[c]}")
         }
 
