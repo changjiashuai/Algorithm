@@ -15,5 +15,6 @@ class MinWindowTest {
         Assert.assertEquals("BANC", minWindow2("ADOBECODEBANC", "ABC"))
         Assert.assertEquals("a", minWindow2("a", "a"))
         Assert.assertEquals("", minWindow2("a", "aa"))
+        Assert.assertEquals("aksfaje", minWindow2("ahffaksfajeeubsne", "jefaa"))
     }
 }

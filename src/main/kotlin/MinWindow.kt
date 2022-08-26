@@ -67,7 +67,8 @@ fun minWindow2(s: String, t: String): String {
 
     var l = 0
     var r = 0
-    var windowLength = -1
+    //windowLength, l, r
+    val ans = arrayOf(-1, 0, 0)
 
     val targetCount = dictT.size
     //???
@@ -90,8 +91,10 @@ fun minWindow2(s: String, t: String): String {
         while (l <= r && currentCount == targetCount) {
             val c = s[l]
 
-            if (windowLength == -1 || r - l + 1 < windowLength) {
-                windowLength = r - l + 1
+            if (ans[0] == -1 || r - l + 1 < ans[0]) {
+                ans[0] = r - l + 1
+                ans[1] = l
+                ans[2] = r
             }
 
             //left move --
@@ -105,5 +108,5 @@ fun minWindow2(s: String, t: String): String {
         r++
     }
 
-    return if (windowLength == -1) "" else s.substring(l - 1, r)
+    return if (ans[0] == -1) "" else s.substring(ans[1], ans[2] + 1)
 }
