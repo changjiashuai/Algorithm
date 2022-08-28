@@ -1,11 +1,11 @@
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 
 class BracketMatcherTest {
 
     @Test
     fun test() {
-        Assert.assertEquals("0", bracketMatcher("(coder)(byte))"))
-        Assert.assertEquals("1", bracketMatcher("(c(oder)) b(yte)"))
+        Assertions.assertEquals("0", bracketMatcher("(coder)(byte))"))
+        Assertions.assertEquals("1", bracketMatcher("(c(oder)) b(yte)"))
     }
 }
