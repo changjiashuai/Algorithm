@@ -47,7 +47,7 @@ private fun getMinuteOfDay(time: String): Int {
         hour * MINUTES_IN_HOUR + minute
     }
     return if (minuteOfDay > MINUTES_IN_DAY) {
-        minuteOfDay - MINUTES_IN_HOUR
+        minuteOfDay - MINUTES_IN_DAY
     } else {
         minuteOfDay
     }
