@@ -63,3 +63,26 @@ fun coinChange2(coins: Array<Int>, amount: Int): Int {
 //    return if (dp[amount] > amount) -1 else dp[amount]
 
 }
+
+fun change(amount: Int, coins: Array<Int>): Int {
+    val dp = IntArray(amount + 1) { 0 }
+    dp[0] = 1
+    //dp = [1, 0, 0, 0, 0, 0, ...]
+    //dp.index = [minCoin .. amount]
+    //x=dp[index] = A(sum[0..index] = x)
+    for (coin in coins) {
+        println("outer=$coin")
+        for (i in coin..amount) {
+            println("outer=$coin, inner=$i, dp[$i]=${dp[i]} + ${dp[i-coin]}, dp[5]=${dp[amount]}")
+            dp[i] = dp[i] + dp[i - coin]
+        }
+        println()
+        println("dp=${dp.contentToString()}\n")
+    }
+
+    return dp[amount]
+}
+
+fun main() {
+    println("[]=${change(5, arrayOf(5, 2, 1))}")
+}
